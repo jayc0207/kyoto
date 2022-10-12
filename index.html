@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> 臉書總部 -全景空間</title>
+    <title> 京都景點 -全景空間</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">    
     <meta name="description" content="A-Frame School">
    
@@ -58,6 +58,8 @@
           
         <img id="mapicon" src="images/mapicon.png">
           
+        <img id="magicon" src="images/magnifier01.png">  
+          
         <img id="wwwicon" src="images/wwwicon.png">  
           
         <img id="mapicon01" src="360img/p-n.png">
@@ -74,6 +76,8 @@
          
         <img id="play" src="images/play.jpg">
         <img id="pause" src="images/pause.jpg"> 
+          
+        <img id="showicon01" src="images/show01.jpg">
           
           
         <audio id="intro" src="sound/intro.mp3"></audio> 
@@ -93,7 +97,7 @@
       <!-- Sky  天空 02 -->   
       <a-entity id="sky02" 
                 geometry="primitive: sphere; radius: 30" 
-                material="side: back; height: 2048; width: 2048; src: #skyTexture02; shader: flat  " position="0 0 -100" rotation="0 260 0"
+                material="side: back; height: 2048; width: 2048; src: #skyTexture02; shader: flat  " position="0 0 -100" rotation="0 80 0"
                 sound="src: #sound02;
         				   on: mouseenter;
         				   volume: 1;
@@ -105,7 +109,7 @@
     
           
       <!-- Sky  天空 04 -->   
-      <a-entity id="sky04" geometry="primitive: sphere; radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture04; shader: flat  " position="-100 0 0"  rotation="0 90 0"
+      <a-entity id="sky04" geometry="primitive: sphere; radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture04; shader: flat  " position="-100 0 0"  rotation="0 350 0"
                     sound="src: #sound04;
         				   on: mouseenter;
         				   volume: 1;
@@ -114,11 +118,11 @@
       </a-entity>
       
       <!-- Sky  天空05  主選單 --> 
-      <a-entity id="sky05" geometry="primitive: sphere;  radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture05; shader: flat"   rotation="0 220 0"></a-entity>  
+      <a-entity id="sky05" geometry="primitive: sphere;  radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture05; shader: flat"   rotation="0 125 0"></a-entity>  
      
         
       <!-- Sky  天空 06 -->   
-      <a-entity id="sky06" geometry="primitive: sphere; radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture06; shader: flat  " position="100 0 0"  rotation="0 90 0"
+      <a-entity id="sky06" geometry="primitive: sphere; radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture06; shader: flat  " position="100 0 0"  rotation="0 120 0"
                 sound="src: #sound06;
         				   on: mouseenter;
         				   volume: 1;
@@ -130,7 +134,7 @@
      
         
       <!-- Sky  天空 08 -->   
-      <a-entity id="sky08" geometry="primitive: sphere; radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture08; shader: flat  " position="0 0 100" rotation="0 180 0"
+      <a-entity id="sky08" geometry="primitive: sphere; radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture08; shader: flat  " position="0 0 100" rotation="0 200 0"
                 sound="src: #sound08;
                                        on: mouseenter;
                                        volume: 1;
@@ -163,9 +167,9 @@
       </a-image>  
         
       <!--網站連結-->
-       <a-entity link="on: click; href: https://zh.wikipedia.org/wiki/Meta_Platforms"  target="_self">
+       <a-entity link="on: click; href: https://zh.m.wikipedia.org/zh-tw/%E4%BA%AC%E9%83%BD%E5%B8%82"  target="_self">
                    <a-image 
-                        src="#wwwicon" scale="0.5 0.5 0.5" position="3.9 0.5 -3.6"  look-at="#cam-rig">
+                        src="#wwwicon" scale="0.5 0.5 0.5" position="3 0.5 -4"  look-at="#cam-rig">
                    </a-image>
       </a-entity>
         
@@ -296,7 +300,19 @@
      
        
         
-        
+      <!-- 放大鏡01-->
+        <a-entity  position="117 1 -8">
+          <a-image look-at="#cam-rig" 
+             src="#magicon" scale="2 2 2" 
+             event-set__enter="_event: mouseenter; _target: #show01; visible: true"
+             event-set__leave="_event: mouseleave; _target: #show01; visible: false">               
+          </a-image>  
+          
+           <!-- 放大鏡 圖片-->
+            <a-image id="show01" 
+                  src="#showicon01" scale="20 20 20" position="0 0 -7"  rotation="0 -55 0" visible="false">
+            </a-image>  
+      </a-entity>   
     
     
         
